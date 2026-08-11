@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home · Bryanston High Fundraiser</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ===== NAVIGATION ===== -->
+    <nav class="navbar glass">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <div class="brand-icon">
+                    <i class="fas fa-running"></i>
+                </div>
+                <span>Bryanston <span class="highlight">Fundraiser</span></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="tickets.html"><i class="fas fa-ticket-alt"></i> Tickets</a></li>
+            </ul>
+            <div class="nav-donate">
+                <a href="tickets.html" class="donate-btn pulse">
+                    <i class="fas fa-heart"></i> Buy Tickets
+                </a>
+            </div>
+            <div class="nav-toggle" id="navToggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== HERO ===== -->
+    <header class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <div class="hero-badge animate-fade-up">
+                <i class="fas fa-flag-checkered"></i>
+                <span>🇿🇦 Team SA · November 2026</span>
+            </div>
+            <h1 class="animate-fade-up delay-1">
+                Ethan <span>Mokoena</span>
+            </h1>
+            <p class="subtitle animate-fade-up delay-2">
+                <i class="fas fa-running"></i> Track & Rugby Athlete
+                <span class="dot">•</span>
+                <i class="fas fa-school"></i> Bryanston High
+            </p>
+            <div class="hero-stats animate-fade-up delay-3">
+                <div class="hero-stat glass">
+                    <span class="number" data-count="0">0</span>
+                    <span class="label">Provincial Caps</span>
+                </div>
+                <div class="hero-stat glass">
+                    <span class="number" data-count="0">0</span>
+                    <span class="label">100m PB</span>
+                </div>
+                <div class="hero-stat glass">
+                    <span class="number" id="supportersCount" data-count="0">0</span>
+                    <span class="label">Supporters</span>
+                </div>
+            </div>
+            <div class="hero-actions animate-fade-up delay-4">
+                <a href="tickets.html" class="btn-primary btn-glow">
+                    <i class="fas fa-ticket-alt"></i> Buy Tickets — R50 Each
+                    <span class="btn-shimmer"></span>
+                </a>
+                <a href="#info" class="btn-secondary glass">
+                    <i class="fas fa-info-circle"></i> Learn More
+                </a>
+            </div>
+            <div class="scroll-indicator animate-bounce">
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===== PROGRESS SECTION - ALL ZERO ===== -->
+    <section class="progress-section" id="info">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Progress</span>
+                <h2>Fundraiser <span>Tracker</span></h2>
+                <p>Every R50 ticket brings Ethan closer to representing South Africa</p>
+            </div>
+            <div class="progress-card glass">
+                <div class="progress-stats">
+                    <div class="stat-item">
+                        <span class="stat-value" id="raisedAmount">R 0</span>
+                        <span class="stat-label">Raised</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <span class="stat-value">R 25,000</span>
+                        <span class="stat-label">Target</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <span class="stat-value" id="progressPercent">0</span>
+                        <span class="stat-label">Complete</span>
+                    </div>
+                </div>
+                <div class="progress-bar-modern">
+                    <div class="progress-fill-modern" id="progressFill" style="width: 0%;">
+                        <div class="progress-glow"></div>
+                    </div>
+                </div>
+                <div class="progress-message">
+                    <i class="fas fa-bullseye"></i>
+                    <span>Goal: <strong>R 25,000</strong> — Be the first to support!</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== INFO SECTION ===== -->
+    <section class="features-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">About</span>
+                <h2>Support Ethan's <span>Journey</span></h2>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card glass hover-lift">
+                    <div class="feature-icon">
+                        <i class="fas fa-ticket-alt"></i>
+                    </div>
+                    <h3>Tickets — R50 Each</h3>
+                    <p>Every ticket purchased helps fund Ethan's travel, accommodation, and training costs for the Commonwealth Youth Games.</p>
+                    <a href="tickets.html" class="feature-link">
+                        Buy Tickets <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="feature-card glass hover-lift">
+                    <div class="feature-icon">
+                        <i class="fas fa-share-alt"></i>
+                    </div>
+                    <h3>Spread the Word</h3>
+                    <p>Share Ethan's story with your network. More supporters mean more chances to reach our goal!</p>
+                    <a href="tickets.html" class="feature-link">
+                        Get Involved <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="feature-card glass hover-lift">
+                    <div class="feature-icon">
+                        <i class="fas fa-hand-holding-heart"></i>
+                    </div>
+                    <h3>Contact Us</h3>
+                    <p>Have questions about the fundraiser? Reach out to the Bryanston High School team.</p>
+                    <a href="#contact" class="feature-link">
+                        Get in Touch <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== QUOTE SECTION ===== -->
+    <section class="quote-section">
+        <div class="container">
+            <div class="quote-card glass">
+                <i class="fas fa-quote-left quote-icon"></i>
+                <blockquote>
+                    "Ethan has shown exceptional dedication to both his sport and academics. He represents the best of Bryanston High School."
+                </blockquote>
+                <cite>— Bryanston High School</cite>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CONTACT SECTION ===== -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Contact</span>
+                <h2>Get in <span>Touch</span></h2>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-card glass">
+                    <div class="contact-item">
+                        <i class="fas fa-school"></i>
+                        <div>
+                            <strong>Bryanston High School</strong>
+                            <p>Cnr Main Road & Ballyclare Drive<br>Bryanston, Johannesburg</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <strong>Email</strong>
+                            <p><a href="mailto:fundraiser@bryanstonhigh.co.za">fundraiser@bryanstonhigh.co.za</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <strong>Phone</strong>
+                            <p><a href="tel:+27111234567">+27 11 123 4567</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form-card glass">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label>Full Name</label>
+                            <input type="text" placeholder="John Doe" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Email Address</label>
+                            <input type="email" placeholder="john@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Message</label>
+                            <textarea rows="4" placeholder="Your message..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary">
+                            <i class="fas fa-paper-plane"></i> Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="brand-icon">
+                        <i class="fas fa-running"></i>
+                    </div>
+                    <h3>Bryanston High</h3>
+                    <p>Supporting our student athletes to reach the world stage.</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="tickets.html">Tickets</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="tickets.html">Buy Tickets — R50</a></li>
+                        <li><a href="index.html#info">About</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-newsletter">
+                    <h4>Stay Updated</h4>
+                    <p>Follow Ethan's journey to the Commonwealth Youth Games.</p>
+                    <div class="newsletter-form">
+                        <input type="email" placeholder="john@example.com">
+                        <button><i class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Bryanston High School · Proudly South African 🇿🇦</p>
+                <p class="small">No database · All data simulated for demonstration</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
