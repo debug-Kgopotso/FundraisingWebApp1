@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tickets · Bryanston High Fundraiser</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ===== NAVIGATION ===== -->
+    <nav class="navbar glass">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <div class="brand-icon">
+                    <i class="fas fa-running"></i>
+                </div>
+                <span>Bryanston <span class="highlight">Fundraiser</span></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="tickets.html" class="active"><i class="fas fa-ticket-alt"></i> Tickets</a></li>
+            </ul>
+            <div class="nav-donate">
+                <a href="tickets.html" class="donate-btn pulse">
+                    <i class="fas fa-heart"></i> Buy Tickets
+                </a>
+            </div>
+            <div class="nav-toggle" id="navToggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== PAGE HEADER ===== -->
+    <div class="page-header-modern">
+        <div class="container">
+            <div class="header-content">
+                <span class="section-tag">Tickets</span>
+                <h1>Buy <span>Tickets</span></h1>
+                <p class="header-subtitle">Each ticket costs <strong>R50</strong> — directly supporting Ethan's journey</p>
+                <div class="header-stats">
+                    <div class="header-stat">
+                        <span class="stat-number">R50</span>
+                        <span class="stat-label">Per Ticket</span>
+                    </div>
+                    <div class="header-stat">
+                        <span class="stat-number" id="totalTicketsSold">0</span>
+                        <span class="stat-label">Tickets Sold</span>
+                    </div>
+                    <div class="header-stat">
+                        <span class="stat-number" id="ticketsRemaining">500</span>
+                        <span class="stat-label">Tickets Remaining</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== TICKET PURCHASE SECTION ===== -->
+    <section class="ticket-purchase-section">
+        <div class="container">
+            <div class="ticket-layout">
+                <!-- LEFT: Ticket Options -->
+                <div class="ticket-options">
+                    <h2><i class="fas fa-ticket-alt"></i> Select Your Tickets</h2>
+                    <p class="ticket-info-text">Each ticket is R50. Choose how many you'd like to purchase.</p>
+                    
+                    <div class="ticket-selector">
+                        <div class="ticket-type-card selected" id="ticketTypeSingle">
+                            <div class="ticket-type-icon">
+                                <i class="fas fa-ticket"></i>
+                            </div>
+                            <div class="ticket-type-info">
+                                <h4>Single Ticket</h4>
+                                <p>1 ticket · R50</p>
+                            </div>
+                            <div class="ticket-type-check">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                        </div>
+                        <div class="ticket-type-card" id="ticketTypeBundle5">
+                            <div class="ticket-type-icon">
+                                <i class="fas fa-ticket-alt"></i>
+                            </div>
+                            <div class="ticket-type-info">
+                                <h4>5 Tickets</h4>
+                                <p>5 tickets · R250</p>
+                            </div>
+                            <div class="ticket-type-check">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                        </div>
+                        <div class="ticket-type-card" id="ticketTypeBundle10">
+                            <div class="ticket-type-icon">
+                                <i class="fas fa-tickets"></i>
+                            </div>
+                            <div class="ticket-type-info">
+                                <h4>10 Tickets</h4>
+                                <p>10 tickets · R500</p>
+                            </div>
+                            <div class="ticket-type-check">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="ticket-quantity">
+                        <label for="ticketQty">Quantity</label>
+                        <div class="quantity-selector">
+                            <button class="qty-btn" id="qtyMinus"><i class="fas fa-minus"></i></button>
+                            <input type="number" id="ticketQty" value="1" min="1" max="50">
+                            <button class="qty-btn" id="qtyPlus"><i class="fas fa-plus"></i></button>
+                        </div>
+                        <span class="quantity-price" id="totalPriceDisplay">R 50</span>
+                    </div>
+                </div>
+
+                <!-- RIGHT: Checkout Form -->
+                <div class="checkout-form">
+                    <div class="checkout-header">
+                        <h3><i class="fas fa-shopping-cart"></i> Checkout</h3>
+                        <p>Complete your purchase to support Ethan</p>
+                    </div>
+
+                    <form id="ticketForm">
+                        <div class="form-group">
+                            <label><i class="fas fa-user"></i> Full Name</label>
+                            <input type="text" id="ticketName" placeholder="John Doe" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label><i class="fas fa-envelope"></i> Email Address</label>
+                            <input type="email" id="ticketEmail" placeholder="john@example.com" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label><i class="fas fa-phone"></i> Phone Number</label>
+                            <input type="tel" id="ticketPhone" placeholder="+27 82 123 4567">
+                        </div>
+
+                        <div class="order-summary">
+                            <h4>Order Summary</h4>
+                            <div class="summary-row">
+                                <span>Tickets</span>
+                                <span id="summaryQty">1</span>
+                            </div>
+                            <div class="summary-row">
+                                <span>Price per ticket</span>
+                                <span>R 50</span>
+                            </div>
+                            <div class="summary-row total">
+                                <span><strong>Total</strong></span>
+                                <span><strong id="summaryTotal">R 50</strong></span>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn-primary submit-btn">
+                            <i class="fas fa-check-circle"></i> Purchase Tickets
+                        </button>
+                    </form>
+
+                    <div class="ticket-message" id="ticketMessage">
+                        <i class="fas fa-check-circle"></i>
+                        <span id="messageText">Thank you, John Doe! Your tickets have been purchased.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== WHAT YOUR SUPPORT DOES ===== -->
+    <section class="impact-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Impact</span>
+                <h2>What Your <span>Support</span> Does</h2>
+            </div>
+            <div class="impact-grid">
+                <div class="impact-card glass">
+                    <div class="impact-icon">
+                        <i class="fas fa-plane"></i>
+                    </div>
+                    <h4>Travel Costs</h4>
+                    <p>Every R50 ticket helps cover international flights</p>
+                </div>
+                <div class="impact-card glass">
+                    <div class="impact-icon">
+                        <i class="fas fa-hotel"></i>
+                    </div>
+                    <h4>Accommodation</h4>
+                    <p>Funding for athlete accommodation during the games</p>
+                </div>
+                <div class="impact-card glass">
+                    <div class="impact-icon">
+                        <i class="fas fa-tshirt"></i>
+                    </div>
+                    <h4>Competition Kit</h4>
+                    <p>Supporting Ethan's official team kit and equipment</p>
+                </div>
+                <div class="impact-card glass">
+                    <div class="impact-icon">
+                        <i class="fas fa-dumbbell"></i>
+                    </div>
+                    <h4>Training</h4>
+                    <p>Contributing to pre-tournament training camps</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="brand-icon">
+                        <i class="fas fa-running"></i>
+                    </div>
+                    <h3>Bryanston High</h3>
+                    <p>Supporting our student athletes to reach the world stage.</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="tickets.html">Tickets</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="tickets.html">Buy Tickets — R50</a></li>
+                        <li><a href="index.html#info">About</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-newsletter">
+                    <h4>Stay Updated</h4>
+                    <p>Follow Ethan's journey to the Commonwealth Youth Games.</p>
+                    <div class="newsletter-form">
+                        <input type="email" placeholder="john@example.com">
+                        <button><i class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Bryanston High School · Proudly South African 🇿🇦</p>
+                <p class="small">No database · All data simulated for demonstration</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
